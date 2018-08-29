@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import * as d3 from 'd3';
+import data from './data_set/data.csv';
 
 class App extends Component {
+
+
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+
+    d3.csv(data).then(function (data) {
+      return data;
+    })
+    .then(function (data) {
+      console.log('new_data', data);
+    })
+    .catch(function (err) {
+        throw err;
+    })
+  }
+
   render() {
+
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>Data Visualization</div>
       </div>
     );
   }
