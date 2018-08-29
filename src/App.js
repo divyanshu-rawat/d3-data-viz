@@ -1,54 +1,39 @@
-import React, { Component } from 'react';
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import * as d3 from 'd3';
 import data from './data_set/data.csv';
+import Batting from './Components/batting_data_component';
 
-class App extends Component {
+class App extends React.Component {
 
-
-  constructor(props){
+  constructor(props) {
     super(props);
-
-    this.state = {
-      'batting_data' : []
-    }
-
+    this.state = {};
+    this.load_data_driven_document = this.load_data_driven_document.bind(this);
   }
 
-  componentDidMount(){
-
-    d3.csv(data).then( (data) =>{
-
-      let clean_data = data.filter((data) => {
-
-          if(isNaN(data.batting_score) && !(/[*]$/g.test(data.batting_score))){     
-              return false;
-           }
-           return true;
-      });
-
-      return clean_data;
-
+  load_data_driven_document(){
+    d3.csv(data)
+    .then((data) => {
+      this.setState({ data: data })
     })
-    .then( (data) => {
-      
-      this.setState({
-        batting_data: data
-      })
-
-    })
-    .catch( (err) =>{
+    .catch((err) => {
         throw err;
     })
   }
 
+  componentDidMount() {
+    this.load_data_driven_document();
+  }
+
   render() {
-
-    console.log('batting_data', this.state.batting_data)
-
-    return (
-      <div className="App">
-        <div>Data Visualization</div>
+    return ( 
+      <div className = "App" >
+       <div> Data Visualization </div> 
+          { this.state.data ? <Batting data = {this.state.data}/> : null}
       </div>
     );
   }
