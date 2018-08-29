@@ -7,24 +7,44 @@ class App extends Component {
 
 
   constructor(props){
-    super(props)
+    super(props);
+
+    this.state = {
+      'batting_data' : []
+    }
+
   }
 
   componentDidMount(){
 
-    d3.csv(data).then(function (data) {
-      return data;
+    d3.csv(data).then( (data) =>{
+
+      let clean_data = data.filter((data) => {
+
+          if(isNaN(data.batting_score) && !(/[*]$/g.test(data.batting_score))){     
+              return false;
+           }
+           return true;
+      });
+
+      return clean_data;
+
     })
-    .then(function (data) {
-      console.log('new_data', data);
+    .then( (data) => {
+      
+      this.setState({
+        batting_data: data
+      })
+
     })
-    .catch(function (err) {
+    .catch( (err) =>{
         throw err;
     })
   }
 
   render() {
 
+    console.log('batting_data', this.state.batting_data)
 
     return (
       <div className="App">
