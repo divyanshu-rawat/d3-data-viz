@@ -2,20 +2,37 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as d3 from 'd3';
 
 class Batting extends React.Component{
 
 	constructor(props){
 		super(props);
+		this.state = {}
+		this.remove_irrelevant_parts = this.remove_irrelevant_parts.bind(this);
+	}
+
+	remove_irrelevant_parts(){
+		const {data} = this.props;
+		const pattern = new RegExp("[*]$");
+
+		let Clean_Data = data.filter((object) => {
+ 
+  			 if(isNaN(object.batting_score) && !(pattern.test(object.batting_score))){
+  			 	return false;
+  			 } 
+  			 return true;
+		});
+
+		this.setState({ data: Clean_Data })
 	}
 
 	componentDidMount(){
-		console.log('componentDidMount', this.props.data);
+		this.remove_irrelevant_parts();	
 	}
 
 	render(){
 
+		console.log('Clean', this.state.data)
 		return(
 			<div>
 				<p>Batting Component</p>

@@ -6,13 +6,22 @@ import './App.css';
 import * as d3 from 'd3';
 import data from './data_set/data.csv';
 import Batting from './Components/batting_data_component';
+import Bowling from './Components/bowling_data_component';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      'Boolean': true
+    };
     this.load_data_driven_document = this.load_data_driven_document.bind(this);
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle(){
+
+    this.setState({ Boolean: !this.state.Boolean })
   }
 
   load_data_driven_document(){
@@ -31,9 +40,11 @@ class App extends React.Component {
 
   render() {
     return ( 
-      <div className = "App" >
-       <div> Data Visualization </div> 
-          { this.state.data ? <Batting data = {this.state.data}/> : null}
+      <div className = "container App" > 
+          <button type="button" className="btn btn-default" onClick = {this.toggle}>Toggle Batting/Bowling</button>
+          { (this.state.data && this.state.Boolean == true ) ? <Batting data = {this.state.data}/> : null}
+          { (this.state.data && this.state.Boolean == false) ? <Bowling data = {this.state.data}/> : null}
+
       </div>
     );
   }
