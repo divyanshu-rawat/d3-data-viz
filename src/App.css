@@ -2,4 +2,127 @@
   margin-top: 15px;
 }
 
+#visualization{
+	margin-bottom: 15px !important;
+}
 
+.bar {
+  fill: #FAA75B;
+}
+
+.bar-won {
+  fill: #7AC36A;
+}
+
+.bar-lost {
+  fill: steelblue;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.stats{
+	font-size: 1.2em;
+	margin-top: 1%;
+}
+
+.stat-value{
+	font-weight: bold;
+}
+
+.header{
+	box-shadow: 0 1px 2px;
+	margin-top: 0 !important;
+	background-color: #efefef;
+	height: 80px;
+}
+
+.sidebar{
+	background: #efefef;
+	margin-top: -1%;
+	height: 100vh;
+	box-shadow: 2px 0 #7f7f7f;
+}
+
+#visualization{
+	padding: 10%;
+}
+
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 90px;	
+    color: #fff;				
+    padding: 2px;				
+    background: rgba(0,0,0,0.9);
+}
+
+select {
+   /*background: #7AC36A;*/
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   /*border: 0;*/
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   /*color: #fff;*/
+ }
+
+ input[type = "radio"]{
+ 	height: 20px;
+ 	margin-left: 15%;
+ 	margin-right: 5%;
+ }
+
+ label{
+ 	font-size: 1.2em;
+ 	padding: 1%;
+ }
+
+.label-graph .won{
+	background-color: #7AC36A;
+	height: 25px;
+	width: 40px;
+}
+
+.label-graph .lost{
+	background-color: steelblue;
+	height: 25px;
+	width: 40px;
+}
+
+.label-graph .no-result{
+	background-color: #FAA75B;
+	height: 25px;
+	width: 40px;
+}
+
+.label-graph{
+	margin-top: -5%;
+	margin-left: 15%;
+	font-weight: bold;
+}
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	display: inline-block;
+	margin-left: 10%;
+}
+
+.sidebar div{
+	margin-top: 20%;
+}

@@ -10,7 +10,6 @@ class Bowling extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {}
-
 		this.remove_irrelevant_parts = this.remove_irrelevant_parts.bind(this);
 	}
 
@@ -35,7 +34,7 @@ class Bowling extends React.Component{
 	render(){
 		return(
 			<div>
-				<h3>Batting Component</h3>
+				<h3>Bowling Component</h3>
 				{ (this.state.data) ? <BowCalculate data = {this.state.data}/> : null}
 			</div>
 		)
