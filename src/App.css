@@ -1,13 +1,10 @@
-.App {
-  margin-top: 15px;
-}
 
-#visualization{
-	margin-bottom: 15px !important;
+.App {
+  margin-top: 10px;
 }
 
 .bar {
-  fill: #FAA75B;
+  fill: #ec1e00;
 }
 
 .bar-won {
@@ -15,7 +12,11 @@
 }
 
 .bar-lost {
-  fill: steelblue;
+  fill: #8100d6;
+}
+
+#barChart{
+	width: 960px !important;
 }
 
 .axis path,
@@ -45,18 +46,6 @@
 	height: 80px;
 }
 
-.sidebar{
-	background: #efefef;
-	margin-top: -1%;
-	height: 100vh;
-	box-shadow: 2px 0 #7f7f7f;
-}
-
-#visualization{
-	padding: 10%;
-}
-
-
 div.tooltip {	
     position: absolute;			
     text-align: center;			
@@ -66,25 +55,6 @@ div.tooltip {
     background: rgba(0,0,0,0.9);
 }
 
-select {
-   /*background: #7AC36A;*/
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   /*border: 0;*/
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   /*color: #fff;*/
- }
-
- input[type = "radio"]{
- 	height: 20px;
- 	margin-left: 15%;
- 	margin-right: 5%;
- }
-
  label{
  	font-size: 1.2em;
  	padding: 1%;
@@ -93,25 +63,20 @@ select {
 .label-graph .won{
 	background-color: #7AC36A;
 	height: 25px;
-	width: 40px;
 }
 
 .label-graph .lost{
-	background-color: steelblue;
+	background-color: #8100d6;
 	height: 25px;
-	width: 40px;
 }
 
 .label-graph .no-result{
-	background-color: #FAA75B;
+	background-color: #ec1e00;
 	height: 25px;
-	width: 40px;
 }
 
 .label-graph{
-	margin-top: -5%;
-	margin-left: 15%;
-	font-weight: bold;
+	margin-top: 1%;
 }
 
 ul{
@@ -123,6 +88,3 @@ li{
 	margin-left: 10%;
 }
 
-.sidebar div{
-	margin-top: 20%;
-}

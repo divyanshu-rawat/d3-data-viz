@@ -38,7 +38,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.load_data_driven_document();
-    setTimeout(() => this.setState({isLoading: false}), 2000)
+    setTimeout(() => this.setState({isLoading: false}), 500)
   }
 
   render() {
@@ -50,19 +50,28 @@ class App extends React.Component {
     }
 
     return ( 
-      <div className = "container App" id = "App"> 
+      <div className = "container App col-lg-12" id = "App"> 
           <button type="button" className="btn btn-default" onClick = {this.toggle}>Toggle Batting/Bowling</button>
           { 
             (this.state.data && this.state.Boolean == true ) ? 
-             <div>
-               <Batting data = {this.state.data}/>
-                  <div id="visualization" className="col-sm-12">
+             
+             <div className = "col-lg-12">
+               <div className = "col-lg-2">
+                 <Batting data = {this.state.data}/>
+               </div>
+
+               <div className = "col-lg-9"> 
+                  <div id="visualization">
                   </div>
+
                    <ul class="label-graph">
-                    <li><div class="won"></div><span>WON</span></li>
-                    <li><div class="lost"></div><span>LOST</span></li>
-                    <li><div class="no-result"></div><span>NO RESULT</span></li>
+                    <li><div class="won"></div> Won</li>
+                    <li><div class="lost"></div>Lost</li>
+                    <li><div class="no-result"></div>Draw</li>
                   </ul>
+
+              </div>
+
              </div> : null
           }
 

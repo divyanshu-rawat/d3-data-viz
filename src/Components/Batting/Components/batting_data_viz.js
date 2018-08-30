@@ -16,9 +16,18 @@ class Visualization extends React.Component{
 	render(){
 
 		d3.select("#barChart").remove();
-		const {data} = this.props;
+		let data = this.props.data;
+
+		data = data.filter((data)=>{
+
+			data.batting_score = parseInt(data.batting_score,10);
+			return true;
+		})
+
+		console.log('!!',data)
+
 	    let margin = {top: 20, right: 20, bottom: 30, left: 40};
-	    let width = 760 - margin.left - margin.right;
+	    let width = 860;
     	let height = 540 - margin.top - margin.bottom;
 
 	    let x = d3.scaleBand().range([0, width]).padding(0.1);
@@ -73,18 +82,19 @@ class Visualization extends React.Component{
 		      			return 'bar'
 		      		}
 	    		})
-	    		.on("mouseover", function(d) {		
+	    		.on("mouseover", function(d) {	
+	    			console.log('div',d);	
 		            div.transition()		
-		                .duration(1000)		
-		                .style("opacity", .9);		
-		            div	.html(d.wickets + "<br/>"  + d.opposition + "<br/>" + 'in ' + d.ground + "<br/>" + d.date)	
+		                .duration(10)		
+		                .style("opacity", 1);		
+		            div	.html(d.batting_score + "<br/>" + d.opposition + "<br/>" + 'in ' + d.ground + "<br/>" + d.date)	
 		                .style("left", (d3.event.pageX) + "px")		
 		                .style("top", (d3.event.pageY - 28) + "px");	
 		            })	
 
 		        .on("mouseout", function(d) {		
 		            div.transition()		
-		                .duration(800)		
+		                .duration(1000)		
 		                .style("opacity", 0);	
 		        })
 	            .transition()
@@ -94,11 +104,8 @@ class Visualization extends React.Component{
 	      		.attr("y", function(d) { return y(parseInt(d.batting_score,10)); })
 	      		.attr("height", function(d) { return height - y(parseInt(d.batting_score,10)); })
 		
-				
-
 		return(
-			<div>
-				<p>Data Visualization</p>
+			 <div>
 			</div>
 		)
 	}

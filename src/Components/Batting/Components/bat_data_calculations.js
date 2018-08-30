@@ -84,8 +84,8 @@ class BatCalculate extends React.Component{
 			<div> 
 			 	<p>Batting Average : {this.state.batting_average}</p>
 			 	<p>Runs scored     : {this.state.total_number_of_runs}</p>
-			 	<p>Fifty Scored    : {this.state.fifty_scored}</p>
-			 	<p>Hundred Scored  : {this.state.hundered_scored}</p>
+			 	<p>50's  Scored    : {this.state.fifty_scored}</p>
+			 	<p>100's Scored  : {this.state.hundered_scored}</p>
 			 	<p>Innings Played  : {this.state.innings_played}</p>
 			 	<p>Highest Score   : {this.state.maximum_score} </p>
 			</div>
