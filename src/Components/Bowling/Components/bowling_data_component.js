@@ -35,7 +35,7 @@ class Bowling extends React.Component{
 	render(){
 		return(
 			<div>
-				<p>Bowling Component</p>
+				<h3>Batting Component</h3>
 				{ (this.state.data) ? <BowCalculate data = {this.state.data}/> : null}
 			</div>
 		)

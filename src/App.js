@@ -5,9 +5,11 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import * as d3 from 'd3';
 import data from './data_set/data.csv';
-import Batting from './Components/batting_data_component';
-import Bowling from './Components/bowling_data_component';
+import {Batting} from './Components/Batting';
+import {Bowling} from './Components/Bowling';
 
+
+// console.log('bowling', );
 class App extends React.Component {
 
   constructor(props) {
