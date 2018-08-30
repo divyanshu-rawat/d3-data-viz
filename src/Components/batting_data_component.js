@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calculate from './data_calculations';
+import BatCalculate from './bat_data_calculations';
 
 class Batting extends React.Component{
 
@@ -35,7 +35,7 @@ class Batting extends React.Component{
 		return(
 			<div>
 				<h3>Batting Component</h3>
-				 { (this.state.data) ? <Calculate data = {this.state.data}/> : null}
+				 { (this.state.data) ? <BatCalculate data = {this.state.data}/> : null}
 			</div>
 		)
 	}

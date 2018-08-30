@@ -4,7 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Calculate extends React.Component{
+class BatCalculate extends React.Component{
 
 	constructor(props){
 		super(props);
@@ -40,7 +40,12 @@ class Calculate extends React.Component{
 			innings_played += 1
 		});
 
-		this.setState({ fifty_scored: fifty_scored,innings_played : innings_played, maximum_score : maximum_score, hundered_scored : hundered_scored   })
+		this.setState({ 
+			   fifty_scored: fifty_scored,
+			   innings_played : innings_played,
+			   maximum_score : maximum_score,
+			   hundered_scored : hundered_scored
+			})
      }
 
 		
@@ -66,7 +71,10 @@ class Calculate extends React.Component{
 		batting_average = (total_number_of_runs) / (_outs.length);
 		batting_average = parseInt(batting_average.toFixed(2));
 		
-		this.setState({ batting_average : batting_average,total_number_of_runs: total_number_of_runs })
+		this.setState({
+			 batting_average : batting_average,
+			 total_number_of_runs: total_number_of_runs
+	   })
 	}
 
 	render(){
@@ -86,4 +94,4 @@ class Calculate extends React.Component{
 
 }
 
-export default Calculate;
+export default BatCalculate;
