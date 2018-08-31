@@ -29,10 +29,12 @@
 
 #batChart{
 	width: 960px !important;
+	/*height: 550px !important;*/
 }
 
 #bowChart{
 	width: 960px !important;
+	/*height: 550px !important;*/
 }
 
 .axis path,

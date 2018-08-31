@@ -20,13 +20,10 @@ class Bowlingvisualization extends React.Component{
 		d3.select("#bowChart").remove();
 		let data = this.props.data;
 
-
 		data.forEach((data) => {
 		    data.runs_conceded = parseInt(data.runs_conceded,10);
 			data.wickets 	   = parseInt(data.wickets,10);
 		});
-
-		console.log('Wickets', data);
 
 	    let margin = {top: 20, right: 20, bottom: 30, left: 40};
 	    let width = 860;
@@ -55,11 +52,6 @@ class Bowlingvisualization extends React.Component{
          .attr("transform", "translate(0," + height + ")")
          .call(d3.axisBottom(x));
 
-         svg.append("text")             
-         .attr("transform","translate(" + (width/2) + " ," + (height + margin.top + 20) + ")")
-         .style("text-anchor", "middle")
-         .text("Date");
-
 		 svg.append("g")
          .call(d3.axisLeft(y))
          
@@ -87,7 +79,7 @@ class Bowlingvisualization extends React.Component{
 		            div.transition()		
 		                .duration(10)		
 		                .style("opacity", 1);		
-		            div	.html( 'Wickets: ' +d.wickets + "<br/>" + d.opposition + "<br/>" + 'in ' + d.ground + "<br/>" + "on" + d.date)	
+		            div	.html( 'Wickets: ' +d.wickets + "<br/>" + d.opposition + "<br/>" + 'IN ' + d.ground + "<br/>" + "ON " + d.date)	
 		                .style("left", (d3.event.pageX) + "px")		
 		                .style("top", (d3.event.pageY - 28) + "px");	
 		            })	
