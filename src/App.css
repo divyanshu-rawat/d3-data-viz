@@ -27,6 +27,9 @@
     fill: #2610fb;
   }
 
+ .text{
+ 	text-align: center;
+ }
 #batChart{
 	width: 960px !important;
 }

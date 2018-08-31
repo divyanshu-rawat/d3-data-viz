@@ -53,6 +53,7 @@ class App extends React.Component {
       <div className = "container App col-lg-12" id = "App"> 
 
           <button type="button" className="btn btn-default" onClick = {this.toggle}>Toggle Batting/Bowling</button>
+          <h2 className = "text">Sachin Tendulkar Data Visualization</h2>
           { 
             (this.state.data && this.state.Boolean == true ) ? 
              
