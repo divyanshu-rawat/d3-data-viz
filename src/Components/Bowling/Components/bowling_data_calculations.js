@@ -10,7 +10,7 @@ class BowCalculate extends React.Component{
 		super(props);
 
 		this.state = {}
-		this.calculate_data 	      = this.calculate_data.bind(this);
+		this.calculate_data = this.calculate_data.bind(this);
 	}
 
 
@@ -27,6 +27,7 @@ class BowCalculate extends React.Component{
 		    runs_conceded += parseInt(object.runs_conceded, 10);
 		    wickets       += parseInt(object.wickets, 10);
 		    catches       += parseInt(object.catches, 10);
+		    
 		});
 
 		bowling_average = (runs_conceded) / (wickets);

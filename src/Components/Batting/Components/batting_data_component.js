@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BatCalculate from './bat_data_calculations';
-import Visualization   from './batting_data_viz';
+import Battingvisualization   from './batting_data_viz';
 
 class Batting extends React.Component{
 
@@ -14,6 +14,8 @@ class Batting extends React.Component{
 	}
 
 	remove_irrelevant_parts(){
+
+		console.log('iiii')
 		const {data} = this.props;
 		const pattern = new RegExp("[*]$");
 
@@ -37,7 +39,7 @@ class Batting extends React.Component{
 			<div>
 				<h3>Batting Component</h3>
 				 { (this.state.data) ? <BatCalculate data = {this.state.data}/> : null}
-				 { (this.state.data) ? <Visualization data = {this.state.data}/> : null}
+				 { (this.state.data) ? <Battingvisualization data = {this.state.data}/> : null}
 			</div>
 		)
 	}

@@ -4,6 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BowCalculate from './bowling_data_calculations';
+import Bowlingvisualization   from './bowling_data_viz';
 
 class Bowling extends React.Component{
 
@@ -32,10 +33,13 @@ class Bowling extends React.Component{
 	}
 
 	render(){
+
+		console.log('intial Data Bowling', this.state.data);
 		return(
 			<div>
 				<h3>Bowling Component</h3>
-				{ (this.state.data) ? <BowCalculate data = {this.state.data}/> : null}
+				{ (this.state.data) ?  <BowCalculate data = {this.state.data}/> : null} 
+				{ (this.state.data) ?  <Bowlingvisualization data = {this.state.data}/> : null}
 			</div>
 		)
 	}

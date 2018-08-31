@@ -6,16 +6,15 @@ import '../../../App.css';
 
 // using d3.js version 5.7.0
 
-class Visualization extends React.Component{
+class Battingvisualization extends React.Component{
 
 	constructor(props){
 		super(props)
-		console.log('data', this.props.data);
 	}
 
 	render(){
 
-		d3.select("#barChart").remove();
+		d3.select("#batChart").remove();
 		let data = this.props.data;
 
 		data = data.filter((data)=>{
@@ -23,8 +22,6 @@ class Visualization extends React.Component{
 			data.batting_score = parseInt(data.batting_score,10);
 			return true;
 		})
-
-		console.log('!!',data)
 
 	    let margin = {top: 20, right: 20, bottom: 30, left: 40};
 	    let width = 860;
@@ -37,11 +34,11 @@ class Visualization extends React.Component{
     	.attr("class", "tooltip")				
     	.style("opacity", 0);
 
-    	let svg = d3.select("#visualization")
+    	let svg = d3.select("#BattingViz")
     			 .append("svg")
   		  		 .attr("width",  width)
     			 .attr("height", height)
-    			 .attr("id", "barChart")
+    			 .attr("id", "batChart")
   				 .append("g")
     			 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -83,11 +80,10 @@ class Visualization extends React.Component{
 		      		}
 	    		})
 	    		.on("mouseover", function(d) {	
-	    			console.log('div',d);	
 		            div.transition()		
 		                .duration(10)		
 		                .style("opacity", 1);		
-		            div	.html(d.batting_score + "<br/>" + d.opposition + "<br/>" + 'in ' + d.ground + "<br/>" + d.date)	
+		            div	.html("Score :" + d.batting_score + "<br/>" + d.opposition + "<br/>" + 'in ' + d.ground + "<br/>" + "on " + d.date)	
 		                .style("left", (d3.event.pageX) + "px")		
 		                .style("top", (d3.event.pageY - 28) + "px");	
 		            })	
@@ -106,11 +102,11 @@ class Visualization extends React.Component{
 		
 		return(
 			 <div>
-			</div>
+			 </div>
 		)
 	}
 }
 
-export default Visualization;
+export default Battingvisualization;
 
 

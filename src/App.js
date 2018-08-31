@@ -15,8 +15,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Boolean: true,
-      isLoading: true
+      Boolean: true
+      // isLoading: true
     };
     this.load_data_driven_document = this.load_data_driven_document.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -38,7 +38,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.load_data_driven_document();
-    setTimeout(() => this.setState({isLoading: false}), 500)
+    // setTimeout(() => this.setState({isLoading: false}), 500)
   }
 
   render() {
@@ -51,6 +51,7 @@ class App extends React.Component {
 
     return ( 
       <div className = "container App col-lg-12" id = "App"> 
+
           <button type="button" className="btn btn-default" onClick = {this.toggle}>Toggle Batting/Bowling</button>
           { 
             (this.state.data && this.state.Boolean == true ) ? 
@@ -61,13 +62,12 @@ class App extends React.Component {
                </div>
 
                <div className = "col-lg-9"> 
-                  <div id="visualization">
+                  <div id="BattingViz">
                   </div>
-
-                   <ul class="label-graph">
-                    <li><div class="won"></div> Won</li>
-                    <li><div class="lost"></div>Lost</li>
-                    <li><div class="no-result"></div>Draw</li>
+                   <ul className="label-graph">
+                    <li><div className="won"></div> Won</li>
+                    <li><div className="lost"></div>Lost</li>
+                    <li><div className="no-result"></div>Draw</li>
                   </ul>
 
               </div>
@@ -75,7 +75,27 @@ class App extends React.Component {
              </div> : null
           }
 
-          { (this.state.data && this.state.Boolean == false) ? <Bowling data = {this.state.data}/> : null}
+          { 
+            (this.state.data && this.state.Boolean == false) ?
+
+              <div className = "col-lg-12">
+                 
+                   <div className = "col-lg-2">
+                     <Bowling data = {this.state.data}/>
+                   </div>
+
+                   <div className = "col-lg-9"> 
+                      <div id="BowlingViz">
+                      </div>
+                       <ul className="label-graph">
+                        <li><div className="won"></div> Won</li>
+                        <li><div className="lost"></div>Lost</li>
+                        <li><div className="no-result"></div>Draw</li>
+                      </ul>
+                   </div>
+               
+               </div> : null
+           }
           
           
       </div>
