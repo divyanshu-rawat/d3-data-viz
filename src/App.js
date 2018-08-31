@@ -53,7 +53,8 @@ class App extends React.Component {
       <div className = "container App col-lg-12" id = "App"> 
 
           <button type="button" className="btn btn-default" onClick = {this.toggle}>Toggle Batting/Bowling</button>
-          <h2 className = "text">Sachin Tendulkar Data Visualization</h2>
+          <h3 className = "text">Sachin Tendulkar Data Visualization</h3>
+          <p className = "text">As we can see from the visualization <b>Sachin Tendulkar</b> can be regarded as the greatest cricketer of all time.</p>
           { 
             (this.state.data && this.state.Boolean == true ) ? 
              

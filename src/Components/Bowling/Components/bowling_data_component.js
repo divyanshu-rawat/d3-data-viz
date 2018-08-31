@@ -37,7 +37,7 @@ class Bowling extends React.Component{
 		console.log('intial Data Bowling', this.state.data);
 		return(
 			<div>
-				<h3>Bowling Component</h3>
+				<h3>Bowling Statistics</h3>
 				{ (this.state.data) ?  <BowCalculate data = {this.state.data}/> : null} 
 				{ (this.state.data) ?  <Bowlingvisualization data = {this.state.data}/> : null}
 			</div>

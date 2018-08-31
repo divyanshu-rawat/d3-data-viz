@@ -37,7 +37,7 @@ class Batting extends React.Component{
 	render(){
 		return(
 			<div>
-				<h3>Batting Component</h3>
+				<h3>Batting Statistics</h3>
 				 { (this.state.data) ? <BatCalculate data = {this.state.data}/> : null}
 				 { (this.state.data) ? <Battingvisualization data = {this.state.data}/> : null}
 			</div>
