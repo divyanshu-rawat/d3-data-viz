@@ -7,15 +7,31 @@
   fill: #ec1e00;
 }
 
+.bar:hover {
+  fill: #960f00;
+}
+
 .bar-won {
   fill: #7AC36A;
+}
+
+.bar-won:hover {
+  fill: #1a7306;
 }
 
 .bar-lost {
   fill: #8100d6;
 }
 
-#barChart{
+.bar-lost:hover {
+    fill: #2610fb;
+  }
+
+#batChart{
+	width: 960px !important;
+}
+
+#bowChart{
 	width: 960px !important;
 }
 

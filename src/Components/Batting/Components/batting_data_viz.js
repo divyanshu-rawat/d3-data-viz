@@ -47,25 +47,25 @@ class Battingvisualization extends React.Component{
 
 
     	 svg.append("g")
-		 	  .attr("class", "x axis")
-		      .attr("transform", "translate(0," + height + ")")
-		      .call(d3.axisBottom(x))
-		      .selectAll("text")
-		      .attr("y", 0)
-		      .attr("x", 9)
-		      .attr("dy", ".35em")
-		      .attr("transform", "rotate(90)")
-		      .style("text-anchor", "start");
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(x));
+
+         svg.append("text")             
+         .attr("transform","translate(" + (width/2) + " ," + (height + margin.top + 20) + ")")
+         .style("text-anchor", "middle")
+         .text("Date");
 
 		 svg.append("g")
-		 	   .attr("class", "y axis")
-		       .call(d3.axisLeft(y))
-		       .append("text")
-		  	   .attr("transform", "rotate(-90)")
-			   .attr("y", 6)
-			   .attr("dy", ".71em")
-			   .style("text-anchor", "end")
-			   .text("Wickets");
+         .call(d3.axisLeft(y))
+         
+         svg.append("text")
+         .attr("transform", "rotate(-90)")
+         .attr("y", 0 - margin.left)
+         .attr("x",0 - (height / 2))
+         .attr("dy", "1em")
+         .style("text-anchor", "middle")
+         .text("Runs"); 
+
 
 		 svg.selectAll(".bar")
 	    	.data(data)

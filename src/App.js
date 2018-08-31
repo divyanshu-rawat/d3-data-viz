@@ -61,7 +61,7 @@ class App extends React.Component {
                  <Batting data = {this.state.data}/>
                </div>
 
-               <div className = "col-lg-9"> 
+               <div className = "col-lg-10"> 
                   <div id="BattingViz">
                   </div>
                    <ul className="label-graph">
